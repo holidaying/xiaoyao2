@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://www.dlax.com.cn/jiejuefangan_rlsb.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>北京云逍遥网络科技有限公司</title>
+<link href="../home/style.css" type="text/css" rel="stylesheet">
+<script src="../home/jquery.js"></script>
+<script src="../home/lanrenzhijia1.js"></script>
+<script src="../home/jquery-1.7.2.min.js"></script>
+<script src="../home/style.js"></script>
+<script type="text/javascript" src="../home/jquery.mousewheel.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".side ul li").hover(function(){
+		$(this).find(".sidebox").stop().animate({"width":"124px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#0694d5"})	
+	},function(){
+		$(this).find(".sidebox").stop().animate({"width":"54px"},200).css({"opacity":"0.8","filter":"Alpha(opacity=80)","background":"#222"})	
+	});
+	
+});
+
+//回到顶部
+function goTop(){
+	$('html,body').animate({'scrollTop':0},600);
+}
+
+ $(function() {
+		//步骤 1. 从角标开始 ，点击角标，发生变化
+		//         2. 角标动的同时，图片也相应的切换
+		//         3. 循环定时器
+		
+		var znum=10; //变量保存zindex的信息，每点击一次zindex层次加1
+		var bannerTimer=null; //存储定时器
+		var iNow=0;    //累加器    初始为0；
+		var len=$('.box ul li').length;  //获取ul中li的个数 
+
+		$('.box ol li').click(function(event) {
+			znum++;
+
+			$(this).addClass('current').siblings('li').removeClass('current');
+
+			var index=$(this).index();
+			$('.box ul li').eq(index).css({
+				zIndex: znum
+			}).hide().fadeIn();
+
+			//点击完成之后，累加器从当前开始增加
+			iNow=index;
+		});
+
+		//自动播放
+		function autoPlay(){
+			iNow++;
+			znum++;
+			if(iNow>len-1){
+				iNow=0;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		}
+		bannerTimer=setInterval(autoPlay,3000);
+
+		//清除定时器
+		$('.box').hover(function() {
+			clearInterval(bannerTimer);
+			$('.box span').stop().fadeIn();
+		}, function() {
+			clearInterval(bannerTimer);
+			bannerTimer=setInterval(autoPlay,3000);
+			$('.box span').stop().fadeOut();
+		});
+
+		//点击前后
+		$('.prev').click(function(event) {
+			iNow--;
+			znum++;
+			if(iNow<0){
+				iNow=len-1;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		});
+		$('.next').click(function(event) {
+			autoPlay()
+		});
+	});
+</script>
+<style>
+.chanp_r{width:100%; height:2950px;  float:right; }
+.chanp_1 .title{font-size:24px;font-weight:bold;color:#666;text-align:center;margin:35px auto 0;padding-bottom: 25px;}
+.article{float:left;width:100%;height:auto;margin-top:16px;font-size:14px; margin-left:30px; line-height:34px;}
+.article b{font-weight:bold;font-size:16px;}
+.neir{ margin-left:29px; font-size:14px;}
+.neir p{ line-height:30px; margin:0px auto; font-size: 14px; text-indent:26px}
+.neir ul li{ line-height:30px; margin:0px auto; font-size: 14px; text-indent:26px; list-style:inside;}
+.neir2{ margin-left:29px; font-size:14px;}
+.neir2 ul li{ line-height:30px; margin:0px auto; font-size: 14px; text-indent:0px; list-style:inside;}
+.neir1{ margin-left:60px; font-size:14px;}
+.neir1 ul li{ line-height:30px; margin:0px auto; font-size: 14px; list-style:none;}
+.cp-img{float:left; width: 100%; height: auto; margin-top:5px; text-align:center; font-size:12px; margin:20px auto; position:relative;}
+.cp-img span{ position:absolute; bottom:-20px; left:44%; }
+.cp-img1{float:left; width: 100%; height: auto; margin-top:5px; text-align:center; font-size:12px; margin:20px auto; position:relative;}
+.cp-img1 span{ position:absolute; bottom:-20px; left:44%;}
+.chanp_3{height:auto;font-size:14px;width:100%;}
+.chanp_3 b{font-weight:bold;font-size:16px;}
+.chanp_3 img{margin-top:30px;margin-bottom:10px; margin-left:30px;}
+.chanp_4{height:auto;font-size:14px;width:100%;}
+</style>
+</head>
+<body style="">
+<!-- 导航 -->
+<div class="navbox">
+  <div class="nav">
+  <h1><a href="../home.html"><img src="../home/logo.png" width="115" height="42"></a></h1>
+        <li class="drop-menu-effect"><a href="../home.html"><span>首页</span></a></li>
+        <li class="drop-menu-effect"> <a href="../index.html"><span>产品</span></a> </li>
+        <li class="drop-menu-effect mj_hover_menu"> <a href="../resolve.html"><span>解决方案</span></a></li>
+         <li class="drop-menu-effect"> <a href="../about.html"><span>关于我们</span></a>
+         </li>
+      
+    </div>
+</div><!--菜单栏-->
+<div class="fangan" style="overflow:hidden; margin:0 auto;">
+	<ul>
+    	<li>
+			<img src="../home/banner1.png" width="1920" height="327">
+    	</li>
+    </ul>
+</div>
+
+<div id="solution">
+	<div class="jiejue_top"><p>解决方案</p>
+    </div>
+    <div class="jj_content">
+    <div class="jj_con">
+    <p>技术解决方案</p>
+      <ul>
+         <li><a href="../resolve.html">&gt; 智慧园区安防解决方案</a></li>
+        <li><a href="./resove1.html"  class="con_title">&gt; 园区人脸布控解决方案</a></li>
+        <li><a href="./resove2.html">&gt; 园区巡更解决方案</a></li>
+        <!-- <p>行业解决方案</p>
+         <li><a href="http://www.dlax.com.cn/jiejuefangan_payy.html">&gt;平安医院解决方案</a></li>
+         <li><a href="http://www.dlax.com.cn/jiejuefangan_jianyu.html">&gt;数字化监狱解决方案</a></li>
+         <li><a href="http://www.dlax.com.cn/jiejuefangan_dianchang.html">&gt;平安电厂解决方案</a></li> -->
+      </ul>
+    </div>
+    <div class="jj_main">
+      <ul class="jj-ul">
+          <li class="jj-li" style="display:block;">
+            <div class="pt-cp">
+              <div class="jj_r">
+              	<div class="chanp_r">
+    	<div class="chanp_1">
+        	<p class="title">人脸识别布控解决方案</p>
+            <p class="article"><b>需求分析</b>
+            	</p><div class="neir">
+                    <p>安装覆盖全面的视频监控系统是保障园区类公共生活场所的主要安全管理手段之一，视频监控系统可以实现24小时不间断录像，随着摄
+                    像机数量的增加，园区和校园类公共场所的安全性有了大幅的提高，但同时也出现了新的问题。
+                   </p>
+                    <p>随着视频监控系统的普及和大面积应用，带来的一个最突出的问题就是需要人工值守来监控实时视频，以及时发现不安全因素，防患
+                    于未然。但是面对几百、上千路实时视频，使用人工值守监控显然是杯水车薪，如何在海量的视频中快速发现潜在的可疑人员是所有安全管理者都必须面对的挑战。
+                    </p>
+                    <p>为解决上述问题，北京云逍遥网络科技有限公司（以下简称DLAX）针对园区安防应用的特点，开发出人脸识别布控系统，该系统可实现
+                    人脸照片比对、人脸监视布控报警等应用。人脸识别系统基于园区和校园专用网络平台，采用Browser/Server多层结构，可方便连接园区
+                    和校园人员管理信息系统，也可在准入的许可下接入公安系统的人口综合信息系统，快速查询详细资料，鉴别身份。
+                    </p>
+                </div>
+            <p></p>
+        </div>
+        <hr>
+        <div class="chanp_3">
+        	<p class="article"><b>应用范围</b><br>
+             	</p><div class="neir">
+                    <p>人脸与人体的其它生物特征（指纹、虹膜等）一样与生俱来，它的唯一性和不易被复制的良好特性为身份鉴别提供了必要的前提，与其它类型的生物识别比较人脸识别具有非强制性、非接触性、并发性、符合视觉特性等多个优势。<br></p>
+                   
+                    <p>基于人脸识别技术，可以在园区出入口、重点建筑物出入口等关键部位进行布控，对多路实时视频同时进行智能分析，实现对不同类型的人物（例如犯罪分子/危险分子对应黑名单）的识别报警。  
+                    入互联网的情况下，可提供自动的短信提醒或者邮件提醒，对各系统状态进行及时掌握，也可通过日志功能对各系统运行状态进行了解。</p>
+                    
+                   	<p>北京云逍遥网络科技有限公司开发的人脸识别系统具有很强的部署灵活性和功能扩展性：</p>
+                    <ul>
+                    	<li>可以先从若干个重点出入口布控开始，逐步扩展到智能综合安防管理平台；</li>
+                        <li>可以集成专业GIS地图引擎或轻量级开源GIS地图引擎实现基于地图的布控管理操作、综合信息浏览、报警联动等功能；</li>
+                        <li>基于地图操作时，可以支持二维和三维模式；</li>
+                        <li>可以扩展对整个园区进行智能综合管理，连接园区内的所有安防、消防等子系统，实现更高层次的安全保障和全方位的告警、指挥联<p>动。</p></li>
+                    </ul>
+                    <p>人脸识别系统能填补目前园区和校园治安人口管理的盲点，实现对重点人口、犯罪人员及反复轻微违法犯罪人员的针对性打击控制，大大提高园区安全管理水平。可广泛用于政府、高校、企业、医院、场馆、机场、军队等多个行业的园区安防管理中。</p>
+               </div>          
+            <p></p>
+        </div>
+        <div class="chanp_2">
+        	<p class="article"><b>系统部署</b><br>
+            </p><div class="neir">
+                       <p>DLAX智慧园区人脸识别布控解决方案的系统部署组网如下图所示：</p>
+            <p></p>
+            <div class="cp-img"><img src="../home/jjfa-rlsb.png" width="393" height="305"></div>
+             
+                <b>组网说明：</b>
+                <div class="neir2">
+                <ul>
+                    <li>在机房部署人脸布控管理服务器FaceMgr30以及人脸识别智能分析模块/服务器，智能视频分析模块可接收重点视频（需经过视频监控管理平台调度）并进行相应分析，可动态调整需进行分析的视频； 分析发现异常后告警，告警信息通告给集成管理平台（CSM），触发相应的管理预案。</li>
+                    <li>与DLAX安防集成管理平台配合，通过不同的计划任务，可以实现全部实时视频自动地在指定时间段内的切换布控（轮巡所有摄像机，每轮布控一组摄像机，在指定时间到达后切换另一组摄像机进行布控）。</li>
+                    <li>可以集成专业GIS地图引擎或轻量级开源GIS地图引擎实现基于地图的布控管理操作、综合信息浏览、报警联动等功能。</li>
+                </ul>
+                </div>
+            <b>系统应用参考：</b>
+            <div class="cp-img">
+            <img src="../home/jjfa-rlsb1.png" width="350" height="205"><span>人脸识别视频管理</span></div>
+            <div class="cp-img">
+            <img src="../home/jjfa-rlsb2.png" width="353" height="225"><span>人脸识别比对界面</span>
+            </div>
+            <div class="cp-img1"><img src="../home/jjfa-rlsb3.png" width="433" height="275"><span>告警联动视频弹出</span></div>
+            </div>
+        </div>
+        <div class="chanp_4">
+        	<p class="article"><b>方案特点</b><br></p>
+            <div class="neir1">
+            <ul>
+            	<li>1、系统模块化、通用化程度高，部署方式灵活，适用范围广泛。</li>
+                <li>2、支持所有标准的网络摄像机（IPC）、普通摄像头（ONVIF协议）、标清摄像头、高清摄像头等，也可以利用已有的视频监控系统中符合标准的摄像头。</li>
+                <li>3、采用经公安实战使用的高鲁棒性快速动态视频人脸布控算法，对动态视频的人脸抓拍比对拥有多项国内领先专有技术，适合嵌入式人脸智能设备应用和中心平台的海量人脸比对应用。 </li>
+                <li>4、对实时视频分辨率要求低；对匹配照片分辨率要求低；</li>
+                <li>5、支持设置匹配率，以满足不同场合的需求；</li>
+                <li>6、支持设置黑名单、白名单、灰名单、红名单等，已实现多样化实时提示或报警，并提供多样的后期信息管理功能。</li>
+                <li>7、支持多路视频切换，一路人脸视频分析可以针对多路摄像机的不同时段完成实时监测。</li>
+                <li>8、支持多样化的告警和指挥联动，除基本的信息弹窗、声光告警、视频弹窗外，如集成更多的功能模块可实现更高级的联动效果，如在专业GIS地图视频弹窗、自动发送短信、拨打电话等。</li>
+                <li>9、扩展性强，可以作为一个模块，无缝集成进园区安防综合管理平台，也可以实现多级布控覆盖更大的范围。</li>
+            </ul>
+            </div>
+        </div>
+    </div>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </div>
+    </div>
+</div>
+<div class="copy">
+	<div class="current-copy">
+    	<div class="left-copy"><img src="../home/logo.png" width="115" height="42"></div>
+        <div class="zj-copy" style="float:left;margin-left:40px;margin-top:40px;"><img src="../home/copy-fgx.png" width="1" height="88"></div>
+      <p>北京云逍遥网络科技有限公司<br>我们的理念：专业专注 用心服务 不求第一 但求满意</p>
+        
+        <p style="margin:0;">地址：北京市海淀区信息路30号上地大厦5层501室 &nbsp;&nbsp;电话：010-82874850&nbsp;&nbsp;版权所有：2015-2025</p>
+     </div>
+ </div>
+
+<div class="side">
+	<ul>
+		<li><a href="../home/jiejuefangan_rlsb.html"><div class="sidebox"><img src="../home/side_icon01.png">客服中心</div></a></li>
+		<li><a href="javascript:void(0);"><div class="sidebox"><img src="../home/side_icon04.png">QQ客服</div></a></li>
+		<li><a href="javascript:void(0);"><div class="sidebox"><img src="../home/side_icon03.png">新浪微博</div></a></li>
+		<li style="border:none;"><a href="javascript:goTop();" class="sidetop"><img src="../home/side_icon05.png"></a></li>
+	</ul>
+</div><!--footer-->
+
+<script src="../home/jquery.min.js"></script>
+<script>
+$(function(){
+	lanrenzhijia(".drop-menu-effect");
+});
+function lanrenzhijia(_this){
+	$(_this).each(function(){
+		var $this = $(this);
+		var theMenu = $this.find(".submenu");
+		var tarHeight = theMenu.height();
+		theMenu.css({height:0});
+		$this.hover(
+			function(){
+				$(this).addClass("mj_hover_menu");
+				theMenu.stop().show().animate({height:tarHeight},400);
+			},
+			function(){
+				$(this).removeClass("mj_hover_menu");
+				theMenu.stop().animate({height:0},400,function(){
+					$(this).css({display:"none"});
+				});
+			}
+		);
+	});
+}
+</script>
+<!-- 菜单栏 -->
+<script src="../home/jquery-1.5.1.min.js"></script>
+<script src="../home/lanrenzhijia.js"></script>
+<script>
+	$(function(){
+		var $window = $(window),
+			window_width = $window.width();
+		$('#js_banner, #js_banner_img li').width(window_width);
+
+		var urlParam = G.util.parse.url(),
+			startFrame = 0;
+		if (urlParam.search && ('banner' in urlParam.search)) {
+			startFrame = (parseInt(urlParam.search['banner'])-1) || 0;
+		}
+
+		new $.Tab({/*添加圆点按钮*/
+			target: $('#js_banner_img li'),
+			effect: 'slide3d',
+			animateTime: 1000,
+			stay: 5000,
+			playTo: startFrame,
+			autoPlay: true,
+			merge: true,
+			prevBtn: $('#js_banner_pre'),
+			nextBtn: $('#js_banner_next')
+		});
+		$('#js_banner_img').css('left','-' + (window_width * startFrame) + 'px');
+	})
+</script>
+<!-- banner -->
+<script src="../home/jiejuefangan_rlsb.html"></script>
+<script type="text/javascript">
+$(function(){
+    $('.jj_con li').click(function(){
+	 $(this).addClass('con_title').siblings().removeClass('con_title'); 
+	  });
+	  
+   $(".jj_con ul li").click(function(){
+		var index = $(this).index();
+		number = index;
+		$('.jj_main .jj-ul .jj-li').hide();
+		$('.jj_main .jj-ul .jj-li:eq('+index+')').show();
+	});	 
+	
+}) 
+</script>
+
+
+</body></html>

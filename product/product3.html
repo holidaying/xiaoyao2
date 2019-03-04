@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0047)http://www.dlax.com.cn/chanpin_SmartTour10.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>北京鼎立安信科技有限公司</title>
+<link href="../home/style.css" type="text/css" rel="stylesheet">
+<script src="../home/jquery.js"></script>
+<script src="../home/lanrenzhijia1.js"></script>
+<script src="../home/jquery-1.7.2.min.js"></script>
+<script src="../home/style.js"></script>
+<script type="text/javascript" src="../home/jquery.mousewheel.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".side ul li").hover(function(){
+		$(this).find(".sidebox").stop().animate({"width":"124px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#0694d5"})	
+	},function(){
+		$(this).find(".sidebox").stop().animate({"width":"54px"},200).css({"opacity":"0.8","filter":"Alpha(opacity=80)","background":"#222"})	
+	});
+	
+});
+
+//回到顶部
+function goTop(){
+	$('html,body').animate({'scrollTop':0},600);
+}
+
+ $(function() {
+		//步骤 1. 从角标开始 ，点击角标，发生变化
+		//         2. 角标动的同时，图片也相应的切换
+		//         3. 循环定时器
+		
+		var znum=10; //变量保存zindex的信息，每点击一次zindex层次加1
+		var bannerTimer=null; //存储定时器
+		var iNow=0;    //累加器    初始为0；
+		var len=$('.box ul li').length;  //获取ul中li的个数 
+
+		$('.box ol li').click(function(event) {
+			znum++;
+
+			$(this).addClass('current').siblings('li').removeClass('current');
+
+			var index=$(this).index();
+			$('.box ul li').eq(index).css({
+				zIndex: znum
+			}).hide().fadeIn();
+
+			//点击完成之后，累加器从当前开始增加
+			iNow=index;
+		});
+
+		//自动播放
+		function autoPlay(){
+			iNow++;
+			znum++;
+			if(iNow>len-1){
+				iNow=0;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		}
+		bannerTimer=setInterval(autoPlay,3000);
+
+		//清除定时器
+		$('.box').hover(function() {
+			clearInterval(bannerTimer);
+			$('.box span').stop().fadeIn();
+		}, function() {
+			clearInterval(bannerTimer);
+			bannerTimer=setInterval(autoPlay,3000);
+			$('.box span').stop().fadeOut();
+		});
+
+		//点击前后
+		$('.prev').click(function(event) {
+			iNow--;
+			znum++;
+			if(iNow<0){
+				iNow=len-1;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		});
+		$('.next').click(function(event) {
+			autoPlay()
+		});
+	});
+</script>
+<style>
+.chanp_r{width:100%; height:1970px;  float:right; }
+.chanp_1 .title{font-size:24px;font-weight:bold;color:#666;text-align:center;margin:35px auto 0;padding-bottom: 25px;}
+.article{float:left;width:100%;height:auto;margin-top:16px;font-size:14px; margin-left:30px; line-height:34px;}
+.article b{font-weight:bold;font-size:16px;}
+.neir{ margin-left:60px; font-size:14px;}
+.neir p{ line-height:30px; margin:0px auto; font-size: 14px; }
+.cp-img{float:left; width: 100%; height: auto; margin-top:5px; text-align:center; margin-bottom:15px; margin-top:20px;}
+.chanp_3{height:auto;margin-top:40px;font-size:14px;width:100%;}
+.chanp_3 b{font-weight:bold;font-size:16px;}
+.chanp_3 img{margin-top:30px;margin-bottom:10px; margin-left:30px;}
+.chanp_4{height:auto;margin-top:40px;font-size:14px;width:100%;}
+.cp_content_sw{ width:1200px;
+		height:2400px;
+		margin:0 auto;
+		background:#fff;
+		border:1px solid #eee;
+		position:relative;
+}
+.cp_con_sw{
+		width:25%;
+		height:2400px;
+		background:#fff;
+		float:left;
+		border-right:1px solid #eee;
+	}
+hr{color:#dcdcdc;}
+.cp_con_sw ul {
+	width: 100%;
+	height: 410px;
+	list-style:none;
+	font-size:20px;
+    text-indent: 20px;
+	line-height:50px;
+}
+.cp_main_sw{
+		width:74%;
+		height:2400px;
+		float:left;
+		position:absolute;
+		top:0;
+		left:301px;}
+.cp_main_sw .cp-li {
+	display: none;
+}
+.cp-ul li{ width:100%;}
+
+.cp_r{width:100%; height:1830px;background:#fff;float:left;}
+.cp_r_1{width:100%; height:2000px;background:#fff;float:left;}
+
+</style>
+</head>
+<body style="">
+<!-- 代码部分begin -->
+<div class="navbox">
+  <div class="nav">
+                <h1><a href="../index.html"><img src="../home/logo.png" width="115" height="42"></a></h1>
+                <li class="drop-menu-effect"><a href="../home.html"><span>首页</span></a></li>
+                <li class="drop-menu-effect mj_hover_menu"> <a href="javascript:void(0)"><span>产品</span></a>
+                </li>
+                <li class="drop-menu-effect"><a href="../resolve.html"><span>解决方案</span></a>
+                <li class="drop-menu-effect"> <a href="../about.html"><span>关于我们</span></a>
+                </li>
+            </div>
+</div><!--菜单栏-->
+<div class="fuwu">
+	<ul>
+    	<li>
+			<img src="../home/cp_01.jpg" width="1920" height="327">
+    	</li>
+    </ul>
+</div>
+<div id="content">
+	<div class="chanp_top"><p>产品</p>
+    </div>
+     <div class="cp_content_sw">
+        <div class="cp_con_sw">
+        <p>安防集成管理平台</p>
+          <ul>
+                <li><a href="../index.html"
+                        >&gt; 园区安全综合管理服务器</li>
+                    <li><a
+                            href="./product2.html">&gt;
+                            综合接入服务器</a></li>
+                    <li><a
+                            href="./product3.html" class="con_title">&gt;
+                            巡更管理服务器</a></li>
+                    <p>智慧园区管理平台</p>
+                    <li><a
+                            href="./product4.html">&gt;
+                            网格信息管理平台GMIS</a></li>
+                    <li> <a
+                            href="./product5.html">&gt;
+                            保卫服务平台-高校版ISM</a></li>
+                    <p>其它</p>
+                    <li><a
+                            href="./product6.html">&gt;
+                            制高点监控专用超高清摄像系统</a></li>
+                </ul>
+        </div>
+        <div class="cp_main_sw">
+          <ul class="cp-ul">
+            <li class="cp-li" style="display:block;">
+              <div class="pt-cp">
+                <div class="chanp_r">
+                            <div class="chanp_1">
+                                <p class="title">巡更管理服务器SmartTour10</p>
+                                <p class="article"><b>产品简介</b>
+                                    </p><div class="neir">
+                                        <p>巡更管理服务器SmartTour10是软硬件一体化的独立形态产品，非常适合需要进行巡逻巡更管理的客户。该产品可以与能够提供位置数据的智能终端配合，实现实时巡查，路线追踪等功能。可以与支持GPS/北斗的巡更设备、对讲设备、手机、车辆等设备和系统配合。
+                                       </p>
+                                       </div>
+                                <p></p>
+                                <div class="cp-img"><img src="../home/chanp-tour.png" width="425" height="238"></div>
+                            </div>
+                            <hr>
+                            <div class="chanp_2">
+                                <p class="article"><b>产品功能</b><br>
+                                	</p><div class="neir">
+                                         <p>1、实时巡查功能：</p>
+                                         <p>可实时查询巡更设备当前动态，包括位置和状态等。可自由选择想观察的设备及路线。可直观的检查值班人员是否按照规定路线进行工</p><p>作。</p>
+                                         </div>
+                                        <div class="cp-img"><img src="../home/chanp-tour2.png" width="515" height="290"></div> 
+                                        <div class="neir">
+                                        <p>2、记录回查：</p>
+                                         <p>可实现巡逻历史回查，查询历史路线。路线中不但智能添加了起点和终点图标，还根据巡更时间不同添加了时间节点图标，可同时选取多个设备进行展示。</p>
+                                         <p>可以查询并播放一个巡更设备的历史移动轨迹。选取一个设备和相应的时间后，可暂停和停止路线播放，也可以改变路线的播放速度，带来更好的使用体验。</p>
+                                          </div>
+                                        <div class="cp-img"><img src="../home/chanp-tour1.png" width="515" height="290"></div>
+                                        <div class="neir">
+                                        <p>3、系统管理：</p>
+                                         <p>包括设备管理、区域管理、巡更点管理、巡更路线管理，可分别对设备信息、地图区域、巡更点和巡更路线进行添加、修改和删除等操作。</p>
+                                         </div>
+                                        <div class="cp-img"><img src="../home/chanp-tour3.png" width="515" height="290"></div>
+                                        <div class="neir">
+                                        <p>4、巡更统计：</p>
+                                         <p>巡更统计可以统计巡更工作量，巡更路线，巡更点位，报警信息等，工作量统计可计算任意设备在任意时间段的路程，并可以柱状图方式直观展示。</p>
+                                         </div>
+                                        <div class="cp-img"><img src="../home/chanp-tour4.png" width="515" height="290"></div>
+                                        
+                                        <p></p>
+                        </div>
+                        </div>
+                        </div></li></ul></div></div></div>
+
+<div class="copy">
+	<div class="current-copy">
+    	<div class="left-copy"><img src="../home/logo.png" width="115" height="42"></div>
+        <div class="zj-copy" style="float:left;margin-left:40px;margin-top:40px;"><img src="../home/copy-fgx.png" width="1" height="88"></div>
+      <p>北京鼎立安信科技有限公司<br>我们的理念：专业专注 用心服务 不求第一 但求满意</p>
+        
+         <p style="margin:0;">地址：北京市海淀区信息路30号上地大厦5层501室 &nbsp;&nbsp;电话：010-82874850&nbsp;&nbsp;版权所有：2015-2025</p>
+     </div>
+ </div>
+
+<script src="../home/jquery.min.js"></script>
+<script>
+$(function(){
+	lanrenzhijia(".drop-menu-effect");
+});
+function lanrenzhijia(_this){
+	$(_this).each(function(){
+		var $this = $(this);
+		var theMenu = $this.find(".submenu");
+		var tarHeight = theMenu.height();
+		theMenu.css({height:0});
+		$this.hover(
+			function(){
+				$(this).addClass("mj_hover_menu");
+				theMenu.stop().show().animate({height:tarHeight},400);
+			},
+			function(){
+				$(this).removeClass("mj_hover_menu");
+				theMenu.stop().animate({height:0},400,function(){
+					$(this).css({display:"none"});
+				});
+			}
+		);
+	});
+}
+</script>
+<!-- 菜单栏 -->
+<script src="../home/jquery-1.5.1.min.js"></script>
+<script src="../home/lanrenzhijia.js"></script>
+<script>
+	$(function(){
+		var $window = $(window),
+			window_width = $window.width();
+		$('#js_banner, #js_banner_img li').width(window_width);
+
+		var urlParam = G.util.parse.url(),
+			startFrame = 0;
+		if (urlParam.search && ('banner' in urlParam.search)) {
+			startFrame = (parseInt(urlParam.search['banner'])-1) || 0;
+		}
+
+		new $.Tab({/*添加圆点按钮*/
+			target: $('#js_banner_img li'),
+			effect: 'slide3d',
+			animateTime: 1000,
+			stay: 5000,
+			playTo: startFrame,
+			autoPlay: true,
+			merge: true,
+			prevBtn: $('#js_banner_pre'),
+			nextBtn: $('#js_banner_next')
+		});
+		$('#js_banner_img').css('left','-' + (window_width * startFrame) + 'px');
+	})
+</script>
+<!-- banner -->
+<script src="../home/chanpin_SmartTour10.html"></script>
+<script type="text/javascript">
+$(function(){
+    $('.cp_con li').click(function(){
+	 $(this).addClass('con_title').siblings().removeClass('con_title'); 
+	  });
+	  
+   $(".cp_con ul li").click(function(){
+		var index = $(this).index();
+		number = index;
+		$('.cp_main .cp-ul .cp-li').hide();
+		$('.cp_main .cp-ul .cp-li:eq('+index+')').show();
+	});	 
+	
+}) 
+</script>
+<!-- ce cai dan -->
+
+<!--<script>
+$(function(){
+	$(".leftsidebar_box dt").css({"background-color":"#fff"});
+	$(".leftsidebar_box dt img").attr("src","images/select_xl01.png");
+	$(".leftsidebar_box dd").hide();
+	$(".leftsidebar_box dt").click(function(){
+		$(".leftsidebar_box dt").css({"background-color":"#fff"})
+		$(this).css({"background-color": "#e5e5e5"});
+		$(this).parent().find('dd').removeClass("menu_chioce");
+		$(".leftsidebar_box dt img").attr("src","images/select_xl01.png");
+		$(this).parent().find('img').attr("src","images/select_xl.png");
+		$(".menu_chioce").slideUp(); 
+		$(this).parent().find('dd').slideToggle();
+		$(this).parent().find('dd').addClass("menu_chioce");
+	});
+})
+</script>-->
+
+
+
+</body></html>

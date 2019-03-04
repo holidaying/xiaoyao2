@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0046)http://www.dlax.com.cn/chanpin_MatrixView.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>北京云逍遥网络科技有限公司</title>
+<link href="../home/style.css" type="text/css" rel="stylesheet">
+<script src="../home/jquery.js"></script>
+<script src="../home/lanrenzhijia1.js"></script>
+<script src="../home/jquery-1.7.2.min.js"></script>
+<script src="../home/style.js"></script>
+<script type="text/javascript" src="../home/jquery.mousewheel.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".side ul li").hover(function(){
+		$(this).find(".sidebox").stop().animate({"width":"124px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#0694d5"})	
+	},function(){
+		$(this).find(".sidebox").stop().animate({"width":"54px"},200).css({"opacity":"0.8","filter":"Alpha(opacity=80)","background":"#222"})	
+	});
+	
+});
+
+//回到顶部
+function goTop(){
+	$('html,body').animate({'scrollTop':0},600);
+}
+
+ $(function() {
+		//步骤 1. 从角标开始 ，点击角标，发生变化
+		//         2. 角标动的同时，图片也相应的切换
+		//         3. 循环定时器
+		
+		var znum=10; //变量保存zindex的信息，每点击一次zindex层次加1
+		var bannerTimer=null; //存储定时器
+		var iNow=0;    //累加器    初始为0；
+		var len=$('.box ul li').length;  //获取ul中li的个数 
+
+		$('.box ol li').click(function(event) {
+			znum++;
+
+			$(this).addClass('current').siblings('li').removeClass('current');
+
+			var index=$(this).index();
+			$('.box ul li').eq(index).css({
+				zIndex: znum
+			}).hide().fadeIn();
+
+			//点击完成之后，累加器从当前开始增加
+			iNow=index;
+		});
+
+		//自动播放
+		function autoPlay(){
+			iNow++;
+			znum++;
+			if(iNow>len-1){
+				iNow=0;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		}
+		bannerTimer=setInterval(autoPlay,3000);
+
+		//清除定时器
+		$('.box').hover(function() {
+			clearInterval(bannerTimer);
+			$('.box span').stop().fadeIn();
+		}, function() {
+			clearInterval(bannerTimer);
+			bannerTimer=setInterval(autoPlay,3000);
+			$('.box span').stop().fadeOut();
+		});
+
+		//点击前后
+		$('.prev').click(function(event) {
+			iNow--;
+			znum++;
+			if(iNow<0){
+				iNow=len-1;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		});
+		$('.next').click(function(event) {
+			autoPlay()
+		});
+	});
+</script>
+<style>
+.cp_content_sw{ width:1200px;
+		height:2450px;
+		margin:0 auto;
+		background:#fff;
+		border:1px solid #eee;
+		position:relative;
+}
+.cp_con_sw{
+		width:25%;
+		height:2450px;
+		background:#fff;
+		float:left;
+		border-right:1px solid #eee;
+	}
+
+hr{color:#dcdcdc;}
+.cp_con_sw ul {
+	width: 100%;
+	height: 410px;
+	list-style:none;
+	font-size:20px;
+    text-indent: 20px;
+	line-height:50px;
+}
+.cp_main_sw{
+		width:74%;
+		height:1700px;
+		float:left;
+		position:absolute;
+		top:0;
+		left:301px;}
+.cp_main_sw .cp-li {
+	display: none;
+}
+.cp-ul li{ width:100%;}
+
+.cp_r{width:100%; height:2450px;background:#fff;float:left;}
+.cp_r_1{width:100%; height:2450px;background:#fff;float:left;}
+.chanp_r{width:100%; height:2450px;  float:right; }
+.chanp_1{ width:875px; height:auto; margin:0 auto;}
+.chanp_1 .title{font-size:24px;font-weight:bold;color:#666;text-align:center;margin:35px auto 0;padding-bottom: 25px;}
+.article{float:left;width:100%;height:auto;margin-top:16px;font-size:14px; margin-left:30px; line-height:30px;}
+.article b{font-weight:bold;font-size:16px;}
+.chanp_1 ul li{ line-height:26px; list-style:none; font-size:14px; text-indent:24px}
+.neir{  margin-left: 29px; font-size:14px;}
+.neir1{ width:500px; height:70px;}
+.neir1 p{ line-height:30px; margin-left:300px; font-size: 14px;}
+.xq-img{float:left;  width: 100%; height: auto; text-align:center; margin-bottom:15px; margin-left: 0;}
+.xq-img p{ margin-left:120px}
+.hr{ margin:5px auto;}
+.chanp_3{height:auto;margin-top:40px;font-size:14px;width:100%;}
+.chanp_3 b{font-weight:bold;font-size:16px;}
+.chanp_3 img{margin-top:55px;margin-bottom:10px; padding-left: 10px;}
+.chanp_3{height:auto;margin-top:40px;font-size:14px;width:100%;}
+.neir p{ line-height:30px; margin:0px auto; font-size: 14px; text-indent:26px}
+.cp-gg{float:left;height:auto;margin-top:40px;font-size:14px;width:870px;}
+.cp-gg b{font-weight:bold;font-size:16px;}
+.jc-gg{font-size:14px;font-weight:bold;padding-top:40px; margin-left:30px; margin-top:20px;}
+.jc-gg1 li{float:left;width:230px;height:440px;margin-right:26px;text-align:center;position:relative; margin-top:20px;}
+.jc-gg1{width:815px;height:440px;margin:0 auto;text-align:center; list-style:none;}
+
+.jc-gg2 span{display:inline-block;width:1px;height:140px;background:url(../images/cp-fgx.png) no-repeat;margin-top: -70px;margin-left: 161px;}
+.bz{height:auto;padding-left: 30px;font-size:14px;width:100%; margin-bottom:10px; }
+.bz p{font-size:12px;font-weight:normal;}
+.bz p b{font-weight:bold;}
+.chanp_3{height:auto;margin-top:40px;font-size:14px;width:100%; line-height:22px;}
+.chanp_3 b{font-weight:bold;font-size:16px;}
+.neir .trait li {
+	padding-left: 60px;
+	font-size: 14px;
+}
+</style>
+</head>
+<body style="">
+<!-- 代码部分begin -->
+<div class="navbox">
+  <div class="nav">
+                <h1><a href="../index.html"><img src="../home/logo.png" width="115" height="42"></a></h1>
+                <li class="drop-menu-effect"><a href="../home.html"><span>首页</span></a></li>
+                <li class="drop-menu-effect mj_hover_menu"> <a href="javascript:void(0)"><span>产品</span></a>
+                </li>
+                <li class="drop-menu-effect"><a href="../resolve.html"><span>解决方案</span></a>
+                <li class="drop-menu-effect"> <a href="../about.html"><span>关于我们</span></a>
+                </li>
+            </div>
+</div><!--菜单栏-->
+<div class="fuwu">
+	<ul>
+    	<li>
+			<img src="../home/cp_01.jpg" width="1920" height="327">
+    	</li>
+    </ul>
+</div>
+<div id="content">
+	<div class="chanp_top"><p>产品</p>
+    </div>
+     <div class="cp_content_sw">
+        <div class="cp_con_sw">
+        <p>安防集成管理平台</p>
+          <ul>
+                <li><a href="../index.html"
+                        >&gt; 园区安全综合管理服务器</li>
+                    <li><a
+                            href="./product2.html">&gt;
+                            综合接入服务器</a></li>
+                    <li><a
+                            href="./product3.html">&gt;
+                            巡更管理服务器</a></li>
+                    <p>智慧园区管理平台</p>
+                    <li><a
+                            href="./product4.html">&gt;
+                            网格信息管理平台GMIS</a></li>
+                    <li> <a
+                            href="./product5.html">&gt;
+                            保卫服务平台-高校版ISM</a></li>
+                    <p>其它</p>
+                    <li><a
+                            href="./product6.html" class="con_title">&gt;
+                            制高点监控专用超高清摄像系统</a></li>
+                </ul>
+        </div>
+        <div class="cp_main_sw">
+          <ul class="cp-ul">
+            <li class="cp-li" style="display:block;">
+              <div class="pt-cp">
+               <div class="chanp_r">
+    	<div class="chanp_1">
+        	<p class="title">制高点监控专用 超高清摄像系统 MatrixView</p>
+            <p class="article"><b>产品介绍：</b>
+            </p><div class="neir">
+                <p>视频监控已经成为当前保障城市安全的重要基础设施，然而，随着城市规模日益发展扩大，城市环境越来越复杂，特别是超高层建筑等不断出现。当前常见的摄像机一般无论从安装高度、视野范围还是成像清晰度，均无法取得令人满意的效果。部分地区在城市高点安装大倍数光学变倍球机，但是在查看远端场景时，视角变得很小，也不利于进行大范围监控。</p>
+                </div>
+            <p></p>
+        </div>
+        <div class="chanp_3">
+        	<p class="article"><b>产品功能：</b><br>
+           </p>
+           <div class="neir">
+           		<p>北京云逍遥网络科技有限公司（以下简称DLAX）针对制高点监控需求，推出了MatrixView超高清摄像系统，可以兼顾大范围场景监控及重点部位的精确监控。</p>
+           		<p>DLAX MatrixView系统构成如下图所示：</p>
+           		
+
+           </div>
+           <div class="xq-img">
+           		<img src="../home/cp-mw1.png" width="378" height="305">
+            </div>
+            <div class="neir">
+            	<p>如图所示：</p>
+           		<p>DLAX MatrixView由前端视频采集模块和后端视频处理模块两部分构成：</p>
+            	<p>视频采集模块DL-VT2910由多台摄像机构成阵列，每个镜头的光圈、焦距及角度均经过科学测算，这样使得采集的图像在后端视频处理模块进行处理时，降低性能开销，减少像素损失，同时具备更好的视频质量；</p>
+            	<p>视频处理模块DL-VS6000负责多路视频的融合处理，形成超高分辨率的视频，在保障大视角、大场景的同时，兼顾细节的清晰度。</p>
+            </div>
+            <div class="xq-img">
+           		<img src="../home/cp-mw2.png" width="378" height="305">
+            </div>
+            <div class="neir">
+            	<p>视频采集模块和视频处理模块之间可通过光纤直连，也可通过网络相连接。</p>
+            	<p>DLAX MatrixView摄像系统的规格如下：</p>
+            </div>
+            <div class="xq-img">
+           		<img src="../home/cp-mw5.png" width="480" height="390">
+            </div>
+            <div class="neir">
+            	<p>DLAX MatrixView系统特点：</p>
+            	<ul class="trait">
+            		<li>视频覆盖范围超大，且视频无畸变，适合大场景监控；</li>
+            		<li>超高清晰度，可兼顾细节监控；</li>
+            	</ul>
+            </div>
+            <div class="xq-img">
+           		<img src="../home/cp-mw3.png" width="380" height="290">
+           		<img src="../home/cp-mw4.png" width="380" height="290">
+            </div>
+            <div class="neir">
+            	<p>除了城市制高点应用外，由于DLAX MatrixView通过一个设备可实现传统监控系统需要多个摄像机才能覆盖的视野， 一点代替多点，且使用更直观更方便， 因此，MatrxiView 也非常适合其他需要大范围管控的场景，如城市广场、港口、景区、机场、火车站广场、景区、大型园区、水库等。</p>
+            </div>     
+        </div>
+    </div>
+    </div>
+    </li></ul>
+    </div>
+    </div>
+
+<div class="copy">
+	<div class="current-copy">
+    	<div class="left-copy"><img src="../home/logo.png" width="115" height="42"></div>
+        <div class="zj-copy" style="float:left;margin-left:40px;margin-top:40px;"><img src="../home/copy-fgx.png" width="1" height="88"></div>
+      <p>北京云逍遥网络科技有限公司<br>我们的理念：专业专注 用心服务 不求第一 但求满意</p>
+        
+        <p style="margin:0;">地址：北京市海淀区信息路30号上地大厦5层501室 &nbsp;&nbsp;电话：010-82874850&nbsp;&nbsp;版权所有：2015-2025</p>
+     </div>
+ </div>
+<script src="../home/jquery.min.js"></script>
+<script>
+$(function(){
+	lanrenzhijia(".drop-menu-effect");
+});
+function lanrenzhijia(_this){
+	$(_this).each(function(){
+		var $this = $(this);
+		var theMenu = $this.find(".submenu");
+		var tarHeight = theMenu.height();
+		theMenu.css({height:0});
+		$this.hover(
+			function(){
+				$(this).addClass("mj_hover_menu");
+				theMenu.stop().show().animate({height:tarHeight},400);
+			},
+			function(){
+				$(this).removeClass("mj_hover_menu");
+				theMenu.stop().animate({height:0},400,function(){
+					$(this).css({display:"none"});
+				});
+			}
+		);
+	});
+}
+</script>
+<!-- 菜单栏 -->
+<script src="../home/jquery-1.5.1.min.js"></script>
+<script src="../home/lanrenzhijia.js"></script>
+<script>
+	$(function(){
+		var $window = $(window),
+			window_width = $window.width();
+		$('#js_banner, #js_banner_img li').width(window_width);
+
+		var urlParam = G.util.parse.url(),
+			startFrame = 0;
+		if (urlParam.search && ('banner' in urlParam.search)) {
+			startFrame = (parseInt(urlParam.search['banner'])-1) || 0;
+		}
+
+		new $.Tab({/*添加圆点按钮*/
+			target: $('#js_banner_img li'),
+			effect: 'slide3d',
+			animateTime: 1000,
+			stay: 5000,
+			playTo: startFrame,
+			autoPlay: true,
+			merge: true,
+			prevBtn: $('#js_banner_pre'),
+			nextBtn: $('#js_banner_next')
+		});
+		$('#js_banner_img').css('left','-' + (window_width * startFrame) + 'px');
+	})
+</script>
+<!-- banner -->
+<script src="../home/chanpin_MatrixView.html"></script>
+<script type="text/javascript">
+$(function(){
+    $('.cp_con li').click(function(){
+	 $(this).addClass('con_title').siblings().removeClass('con_title'); 
+	  });
+	  
+   $(".cp_con ul li").click(function(){
+		var index = $(this).index();
+		number = index;
+		$('.cp_main .cp-ul .cp-li').hide();
+		$('.cp_main .cp-ul .cp-li:eq('+index+')').show();
+	});	 
+	
+}) 
+</script>
+
+
+
+</div></body></html>

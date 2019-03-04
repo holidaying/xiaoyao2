@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://www.dlax.com.cn/jiejuefangan_yqxg.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>北京云逍遥网络科技有限公司</title>
+<link href="../home/style.css" type="text/css" rel="stylesheet">
+<script src="../home/jquery.js"></script>
+<script src="../home/lanrenzhijia1.js"></script>
+<script src="../home/jquery-1.7.2.min.js"></script>
+<script src="../home/style.js"></script>
+<script type="text/javascript" src="../home/jquery.mousewheel.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".side ul li").hover(function(){
+		$(this).find(".sidebox").stop().animate({"width":"124px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#0694d5"})	
+	},function(){
+		$(this).find(".sidebox").stop().animate({"width":"54px"},200).css({"opacity":"0.8","filter":"Alpha(opacity=80)","background":"#222"})	
+	});
+	
+});
+
+//回到顶部
+function goTop(){
+	$('html,body').animate({'scrollTop':0},600);
+}
+
+ $(function() {
+		//步骤 1. 从角标开始 ，点击角标，发生变化
+		//         2. 角标动的同时，图片也相应的切换
+		//         3. 循环定时器
+		
+		var znum=10; //变量保存zindex的信息，每点击一次zindex层次加1
+		var bannerTimer=null; //存储定时器
+		var iNow=0;    //累加器    初始为0；
+		var len=$('.box ul li').length;  //获取ul中li的个数 
+
+		$('.box ol li').click(function(event) {
+			znum++;
+
+			$(this).addClass('current').siblings('li').removeClass('current');
+
+			var index=$(this).index();
+			$('.box ul li').eq(index).css({
+				zIndex: znum
+			}).hide().fadeIn();
+
+			//点击完成之后，累加器从当前开始增加
+			iNow=index;
+		});
+
+		//自动播放
+		function autoPlay(){
+			iNow++;
+			znum++;
+			if(iNow>len-1){
+				iNow=0;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		}
+		bannerTimer=setInterval(autoPlay,3000);
+
+		//清除定时器
+		$('.box').hover(function() {
+			clearInterval(bannerTimer);
+			$('.box span').stop().fadeIn();
+		}, function() {
+			clearInterval(bannerTimer);
+			bannerTimer=setInterval(autoPlay,3000);
+			$('.box span').stop().fadeOut();
+		});
+
+		//点击前后
+		$('.prev').click(function(event) {
+			iNow--;
+			znum++;
+			if(iNow<0){
+				iNow=len-1;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		});
+		$('.next').click(function(event) {
+			autoPlay()
+		});
+	});
+</script>
+<style>
+.jj_content1{ width:1200px;
+		height:3050px;
+		margin:0 auto;
+		background:#fff;
+		border:1px solid #eee;
+		position:relative;
+}
+.jj_con1{
+		width:25%;
+		height: 3050px;
+		background:#fff;
+		float:left;
+		border-right:1px solid #eee;
+	}
+.jj_con1 p{
+	font-size:16px;
+	border-bottom:1px solid #dcdcdc;
+	height:45px;
+	line-height:45px;
+	text-indent:20px;
+	}
+.jj_con1 ul {
+	width: 100%;
+	height: 300px;
+	list-style:none;
+	margin-top:0;
+}
+.jj_main1{
+		width:74%;
+		height:900px;
+		float:left;
+		position:absolute;
+		top:0;
+		left:301px;}
+.jj_main1 .fuwu-li {
+	display: none;
+}
+.jj-ul li{ width:100%;}
+.jj_r{width:100%; height:900px;background:#fff;float:left;}
+.chanp_r{width:100%; height:1770px;  float:right; }
+.chanp_1 .title{font-size:24px;font-weight:bold;color:#666;text-align:center;margin:35px auto 0;padding-bottom: 25px;}
+.article{float:left;width:100%;height:auto;margin-top:16px;font-size:14px; margin-left:30px; line-height:34px;}
+.article b{font-weight:bold;font-size:16px;}
+.cp-img{float:left; text-align:center; width: 100%; height: auto;}
+.cp-gg{float:left;height:auto;margin-top:40px;font-size:14px;width:870px;}
+.cp-gg b{font-weight:bold;font-size:16px;}
+.jc-gg{font-size:14px; line-height:22px;}
+.jc-gg1{ font-size:14px; margin-left:8px; line-height:22px;}
+.bz{height:auto;padding-left: 30px;font-size:14px;width:100%; margin-bottom:10px; }
+.bz p{font-size:12px;font-weight:normal;}
+.bz p b{font-weight:bold;}
+.chanp_3{height:auto;margin-top:40px;font-size:14px;width:100%;}
+.chanp_3 b{font-weight:bold;font-size:16px;}
+.chanp_3 img{margin-top:30px;margin-bottom:10px; }
+.yuyan{ width:600px; height:460px; float:left; margin:10px auto; margin-left:125px; margin-right:150px;}
+.yuyan .pic{ width:250px; height:180px; float:left; margin:15px;}
+.yuyan .pic span{ margin-left:88px;}
+.neir{ margin-left:29px; font-size:14px;}
+.neir p{ line-height:30px; margin:0px auto; font-size: 14px; text-indent:26px}
+.neir ul li{ line-height:30px; margin:0px auto; font-size: 14px; text-indent:26px}
+</style>
+</head>
+<body style="">
+<!-- 导航 -->
+<div class="navbox">
+  <div class="nav">
+  <h1><a href="../home.html"><img src="../home/logo.png" width="115" height="42"></a></h1>
+        <li class="drop-menu-effect"><a href="../home.html"><span>首页</span></a></li>
+        <li class="drop-menu-effect"> <a href="../index.html"><span>产品</span></a> </li>
+        <li class="drop-menu-effect mj_hover_menu"> <a href="../resolve.html"><span>解决方案</span></a></li>
+         <li class="drop-menu-effect"> <a href="../about.html"><span>关于我们</span></a>
+         </li>
+      
+    </div>
+</div><!--菜单栏-->
+<div class="fangan" style="overflow:hidden; margin:0 auto; ">
+	<ul>
+    	<li>
+			<img src="../home/banner1.png" width="1920" height="327">
+    	</li>
+    </ul>
+</div>
+
+<div id="solution">
+	<div class="jiejue_top"><p>解决方案</p>
+    </div>
+    <div class="jj_content1">
+    <div class="jj_con1">
+    <p>技术解决方案</p>
+      <ul>
+        <li><a href="../resolve.html">&gt; 智慧园区安防解决方案</a></li>
+        <li><a href="./resove1.html">&gt; 园区人脸布控解决方案</a></li>
+        <li><a href="./resove2.html" class="con_title">&gt; 园区巡更解决方案</a></li>
+        <!-- <p>行业解决方案</p>
+        <li><a href="http://www.dlax.com.cn/jiejuefangan_payy.html">&gt;平安医院解决方案</a></li>
+         <li><a href="http://www.dlax.com.cn/jiejuefangan_jianyu.html">&gt;数字化监狱解决方案</a></li>
+         <li><a href="http://www.dlax.com.cn/jiejuefangan_dianchang.html">&gt;平安电厂解决方案</a></li> -->
+      </ul>
+    </div>
+    <div class="jj_main1">
+      <ul class="jj-ul">
+          <li class="jj-li" style="display:block;">
+            <div class="pt-cp">
+              <div class="jj_r">
+              	<div class="chanp_r">
+    	<div class="chanp_1">
+        	<p class="title">基于GIS的园区巡更管理解决方案</p>
+            <p class="article"><b>需求分析</b>
+            </p><div class="neir">
+                <p>人防、物防、技防是安全范围的主要内容，缺一不可。 电子巡更同时具备人防和技防的要素，可对安保巡逻人员的工作进行规范化、科学化、数据化的管理。巡更是人防的重要方式之一，巡更系统则是技防的重要手段之一。</p>
+                <p>随着人们对安全的日益重视，巡更系统已经成为园区安全管理不可或缺的内容。但是，随着安全管理需求的不断发展，安保巡逻人员成本的不断上升，传统的巡更管理也面临着一系列新的挑战，具体包括：</p>
+                <ul class="jc-gg" style="list-style:none">
+                	<li>1、巡逻人员的状态管理：如何掌握保安队员的实时巡逻行踪及工作状态？如何避免巡逻人员的睡岗、脱岗现象？ </li>
+                    <li>2、巡逻路线管理：如何对巡逻路线进行规划及效果评估？如何确定巡逻人员没有偏离规定的巡逻路线或区域？</li>
+                    <li>3、事件处置：巡逻人员发现异常情况后，如何快速有效的通知指挥中心或管理人员？在发生突发事件时，如何快速有效通知到最近的</li><li>巡逻人员？如何实现现场情况和指挥中心指令的上传下达？</li>
+                    <li>4、巡逻绩效管理：如何对巡逻人员的工作量和工作绩效进行评估？如何合理规整、分析安保工作信息，高效科学的提升管理决策水</li><li>平？</li>
+                    <li>针对上述问题，北京云逍遥网络科技有限公司（以下简称DLAX）研发并推出了基于GIS的园区巡更管理系统SmartTour。</li>
+                    <li>SmartTour可以与支持位置数据采集的智能巡更终端配合，实现园区智能的巡更管理。</li>
+                </ul>
+                </div>
+            <p></p>
+            <div class="cp-img"><img src="../home/jjfa-xg.png" width="393" height="250"></div> 
+        </div>
+        <hr>
+        <div class="chanp_2">
+        	<p class="article"><b>系统功能</b><br>
+            </p><div class="neir">
+            <p>SmartTour可实现以下功能：</p>
+            <p class="jc-gg">1、实时巡查功能：
+                </p><p>可实时查询巡更设备当前动态，包括位置和状态等。可自由选择想观察的设备及路线。可直观的检查值班人员是否按照规定路线进行工</p><p>作。</p>
+                <div class="cp-img"><img src="../home/jjfa-xg1.png" width="393" height="305"></div>
+            <p></p>
+            <p class="jc-gg">2、记录回查
+                </p><p>可实现巡逻历史回查，查询历史路线。路线中不但智能添加了起点和终点图标，还根据巡更时间不同添加了时间节点图标，可同时选取</p><p>多个设备进行展示。</p>
+                <p>可以查询并播放一个巡更设备的历史移动轨迹。选取一个设备和相应的时间后，可暂停和停止路线播放，也可以改变路线的播放速度，</p><p>带来更好的使用体验。</p>
+                <div class="cp-img"><img src="../home/jjfa-xg2.png" width="393" height="250"></div>
+            <p></p>
+            <p class="jc-gg">3、系统管理
+                </p><p>包括设备管理、区域管理、巡更点管理、巡更路线管理，可对设备信息、地图区域、巡更点和巡更路线进行添加、修改和删除等操作。</p>
+                <div class="cp-img"><img src="../home/jjfa-xg3.png" width="393" height="305"></div>
+            <p></p>
+            <p class="jc-gg">4、巡更统计
+                </p><p>巡更统计可以统计巡更工作量，巡更路线，巡更点位，报警信息等，工作量统计可计算任意设备在任意时间段的路程，并可以柱状图方</p><p>式直观展示。</p>
+                <div class="cp-img"><img src="../home/jjfa-xg4.png" width="393" height="305"></div>
+            <p></p>
+             <p class="jc-gg">5、其他	
+                </p><p>SmartTour可以与DLAX公司的安防集成管理平台产品（CSM）配合，实现与其他安防子系统，如视频监控、消防、报警等的联动。通</p>
+                <p>过安防集成管理平台的预案管理功能，还可以实现对一些突发事件的自动预案处置，从而发挥更大的实战价值。</p>
+            <p></p>
+            </div>
+            <p></p> 
+        </div>
+        <div class="chanp_3">
+        	<p class="article"><b>应用价值</b><br>
+            </p><div class="neir">
+            	<p class="jc-gg">SmartTour应用价值：</p>
+              	<p>1、巡逻状态管理：动态掌握保安队员的实时巡逻状态；</p>
+                <p>2、巡逻路线管理：对巡逻路线进行规划，并对当前巡逻人员是否在规划路线或区域范围内进行监管；</p>
+                <p>3、事件处置：配合安防集成管理平台，实现事件的快速响应； </p>
+                <p>4、巡逻绩效管理：基于真实详尽的数据进行量化分析，有利于规范化、科学化管理。</p>
+                <p>SmartTour可以与能够提供位置数据的智能终端配合，实现实时巡查，路线追踪等功能。可以与支持GPS/北斗的巡更设备、对讲设备、</p>
+                <p>手机、车辆等设备和系统配合。实际上，只要是任何一个涉及定期进行数据采集与巡逻的地方，都可以采用到它。</p>
+        </div>
+        </div>
+        
+    </div>	
+              </div>
+            </div>
+          </li>
+      </ul>
+    </div>
+    </div>
+</div>
+<div class="copy">
+	<div class="current-copy">
+    	<div class="left-copy"><img src="../home/logo.png" width="115" height="42"></div>
+        <div class="zj-copy" style="float:left;margin-left:40px;margin-top:40px;"><img src="../home/copy-fgx.png" width="1" height="88"></div>
+      <p>北京云逍遥网络科技有限公司<br>我们的理念：专业专注 用心服务 不求第一 但求满意</p>
+        
+         <p style="margin:0;">地址：北京市海淀区信息路30号上地大厦5层501室 &nbsp;&nbsp;电话：010-82874850&nbsp;&nbsp;版权所有：2015-2025</p>
+     </div>
+ </div>
+
+<div class="side">
+	<ul>
+		<li><a href="../home/jiejuefangan_yqxg.html"><div class="sidebox"><img src="../home/side_icon01.png">客服中心</div></a></li>
+		<li><a href="javascript:void(0);"><div class="sidebox"><img src="../home/side_icon04.png">QQ客服</div></a></li>
+		<li><a href="javascript:void(0);"><div class="sidebox"><img src="../home/side_icon03.png">新浪微博</div></a></li>
+		<li style="border:none;"><a href="javascript:goTop();" class="sidetop"><img src="../home/side_icon05.png"></a></li>
+	</ul>
+</div><!--footer-->
+
+<script src="../home/jquery.min.js"></script>
+<script>
+$(function(){
+	lanrenzhijia(".drop-menu-effect");
+});
+function lanrenzhijia(_this){
+	$(_this).each(function(){
+		var $this = $(this);
+		var theMenu = $this.find(".submenu");
+		var tarHeight = theMenu.height();
+		theMenu.css({height:0});
+		$this.hover(
+			function(){
+				$(this).addClass("mj_hover_menu");
+				theMenu.stop().show().animate({height:tarHeight},400);
+			},
+			function(){
+				$(this).removeClass("mj_hover_menu");
+				theMenu.stop().animate({height:0},400,function(){
+					$(this).css({display:"none"});
+				});
+			}
+		);
+	});
+}
+</script>
+<!-- 菜单栏 -->
+<script src="../home/jquery-1.5.1.min.js"></script>
+<script src="../home/lanrenzhijia.js"></script>
+<script>
+	$(function(){
+		var $window = $(window),
+			window_width = $window.width();
+		$('#js_banner, #js_banner_img li').width(window_width);
+
+		var urlParam = G.util.parse.url(),
+			startFrame = 0;
+		if (urlParam.search && ('banner' in urlParam.search)) {
+			startFrame = (parseInt(urlParam.search['banner'])-1) || 0;
+		}
+
+		new $.Tab({/*添加圆点按钮*/
+			target: $('#js_banner_img li'),
+			effect: 'slide3d',
+			animateTime: 1000,
+			stay: 5000,
+			playTo: startFrame,
+			autoPlay: true,
+			merge: true,
+			prevBtn: $('#js_banner_pre'),
+			nextBtn: $('#js_banner_next')
+		});
+		$('#js_banner_img').css('left','-' + (window_width * startFrame) + 'px');
+	})
+</script>
+<!-- banner -->
+<script src="../home/jiejuefangan_yqxg.html"></script>
+<script type="text/javascript">
+$(function(){
+    $('.jj_con li').click(function(){
+	 $(this).addClass('con_title').siblings().removeClass('con_title'); 
+	  });
+	  
+   $(".jj_con ul li").click(function(){
+		var index = $(this).index();
+		number = index;
+		$('.jj_main .jj-ul .jj-li').hide();
+		$('.jj_main .jj-ul .jj-li:eq('+index+')').show();
+	});	 
+	
+}) 
+</script>
+
+
+</body></html>
