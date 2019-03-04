@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC" -//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0040)http://www.dlax.com.cn/jiejuefangan.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type"
+            content="text/html; charset=UTF-8">
+
+        <title>北京云逍遥网络科技有限公司</title>
+        <link href="./home/style.css" type="text/css" rel="stylesheet">
+        <script src="./home/jquery.js"></script>
+        <script src="./home/lanrenzhijia1.js"></script>
+        <script src="./home/jquery-1.7.2.min.js"></script>
+        <script src="./home/style.js"></script>
+        <script type="text/javascript" src="./home/jquery.mousewheel.js"></script>
+        <script type="text/javascript">
+$(document).ready(function(){
+
+	$(".side ul li").hover(function(){
+		$(this).find(".sidebox").stop().animate({"width":"124px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#0694d5"})	
+	},function(){
+		$(this).find(".sidebox").stop().animate({"width":"54px"},200).css({"opacity":"0.8","filter":"Alpha(opacity=80)","background":"#222"})	
+	});
+	
+});
+
+//回到顶部
+function goTop(){
+	$('html,body').animate({'scrollTop':0},600);
+}
+
+ $(function() {
+		//步骤 1. 从角标开始 ，点击角标，发生变化
+		//         2. 角标动的同时，图片也相应的切换
+		//         3. 循环定时器
+		
+		var znum=10; //变量保存zindex的信息，每点击一次zindex层次加1
+		var bannerTimer=null; //存储定时器
+		var iNow=0;    //累加器    初始为0；
+		var len=$('.box ul li').length;  //获取ul中li的个数 
+
+		$('.box ol li').click(function(event) {
+			znum++;
+
+			$(this).addClass('current').siblings('li').removeClass('current');
+
+			var index=$(this).index();
+			$('.box ul li').eq(index).css({
+				zIndex: znum
+			}).hide().fadeIn();
+
+			//点击完成之后，累加器从当前开始增加
+			iNow=index;
+		});
+
+		//自动播放
+		function autoPlay(){
+			iNow++;
+			znum++;
+			if(iNow>len-1){
+				iNow=0;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		}
+		bannerTimer=setInterval(autoPlay,3000);
+
+		//清除定时器
+		$('.box').hover(function() {
+			clearInterval(bannerTimer);
+			$('.box span').stop().fadeIn();
+		}, function() {
+			clearInterval(bannerTimer);
+			bannerTimer=setInterval(autoPlay,3000);
+			$('.box span').stop().fadeOut();
+		});
+
+		//点击前后
+		$('.prev').click(function(event) {
+			iNow--;
+			znum++;
+			if(iNow<0){
+				iNow=len-1;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		});
+		$('.next').click(function(event) {
+			autoPlay()
+		});
+	});
+</script>
+        <style>
+.jj_content1{ width:1200px;
+		height: 1500px;
+		margin:0 auto;
+		background:#fff;
+		border:1px solid #eee;
+		position:relative;
+}
+.jj_con1{
+		width: 25%;
+    height: 1500px;
+    background: #fff;
+    float: left;
+    border-right: 1px solid #eee;
+	}
+.jj_con1 ul {
+	width: 100%;
+	height: 300px;
+	list-style:none;
+	margin-top:0;
+}
+.jj_main1{
+		width:74%;
+		height:900px;
+		float:left;
+		position:absolute;
+		top:0;
+		left:301px;}
+.jj_main1 .fuwu-li {
+	display: none;
+}
+.jj-ul li{ width:100%;}
+.jj_r{width:100%; height:900px;background:#fff;float:left;}
+.chanp_r{width:100%; height:1500px;  float:right; }
+.chanp_1 .title{font-size:24px;font-weight:bold;color:#666;text-align:center;margin:35px auto 0;padding-bottom: 25px;}
+.article{float:left;width:100%;height:auto;margin-top:16px;font-size:14px; margin-left:30px; line-height:34px;}
+.article b{font-weight:bold;font-size:16px;}
+.xq-img{float:left; text-align:center; width: 100%; height: auto; margin-bottom:30px;}
+.neir{ margin-left:29px; font-size:14px;}
+.neir p{ line-height:30px; margin:0px auto; font-size: 14px; text-indent: 26px}
+</style>
+    </head>
+    <body style="">
+        <!-- 导航 -->
+        <div class="navbox">
+            <div class="nav">
+                <h1><a href="./index.html"><img src="./home/logo.png"
+                            width="115" height="42"></a></h1>
+
+                <li class="drop-menu-effect"><a href="./home.html"><span>首页</span></a></li>
+                <li class="drop-menu-effect"> <a href="./index.html"><span>产品</span></a>
+                    <div class="submenu" style="height: 0px;">
+                        <div class="mj_menu_pro_bg">
+                            <div class="mj_menu_pro_main">
+                                <div class="mj_menu_pro_li">
+                                    <div class="mj_menu_li_txt">
+                                        <a href="javascript:void(0)"><font>安防集成管理平台</font></a><br>
+                                        <a href="javascript:void(0)">园区安全综合管理服务器</a><br>
+                                        <a href="javascript:void(0)">综合接入服务器</a><br>
+                                        <a href="javascript:void(0)">巡更管理服务器</a><br>
+                                        <a href="javascript:void(0)">人脸布控管理服务器</a><br>
+                                        <a href="javascript:void(0)">安防集成管理平台</a><br>
+                                        <a href="javascript:void(0)">子系统综合接入模块</a><br>
+                                        <a href="javascript:void(0)">巡更管理服务模块</a><br>
+                                        <a href="javascript:void(0)">人脸布控管理模块</a><br>
+                                    </div>
+                                </div>
+                                <div class="mj_menu_pro_li"
+                                    style="padding-left:8px;">
+                                    <div class="mj_menu_li_txt">
+                                        <a href="javascript:void(0)"><font>智慧园区管理平台</font></a><br>
+                                        <a href="javascript:void(0)">网格信息管理平台</a><br>
+                                        <a href="javascript:void(0)">保卫服务平台-高校版</a><br>
+                                    </div>
+                                </div>
+                                <div class="mj_menu_pro_li"
+                                    style="padding-left:8px;">
+                                    <div class="mj_menu_li_txt">
+                                        <a href="javascript:void(0)"><font>其它</font></a><br>
+                                        <a href="javascript:void(0)">超高清摄像系统</a><br>
+                                    </div>
+                                </div>
+                                <div style="clear:both; height:0px;
+                                    overflow:hidden;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="drop-menu-effect"><a
+                        href="./resolve.html"><span>解决方案</span></a>
+                    <div class="submenu" style="height: 0px;">
+                        <div class="mj_menu_pro_bg">
+                            <div class="mj_menu_pro_main">
+                                <div class="mj_menu_pro_li">
+                                    <div class="mj_menu_li_txt">
+                                        <a href="javascript:void(0)"><font>技术解决方案</font></a><br>
+                                        <a href="javascript:void(0)">智慧园区安防解决方案</a><br>
+                                        <a href="javascript:void(0)">园区人脸布控解决方案</a><br>
+                                        <a href="javascript:void(0)">园区巡更解决方案</a><br>
+                                        <a href="javascript:void(0)">园区车辆管理解决方案</a><br>
+                                        <a href="./home/saved_resource"></a><br>
+                                    </div>
+                                </div>
+                                <div class="mj_menu_pro_li"
+                                    style="padding-left:10px;">
+                                    <div class="mj_menu_li_txt">
+                                        <a href="javascript:void(0)"><font>行业解决方案</font></a><br>
+                                        <a href="javascript:void(0)">智慧校园解决方案--网格管理篇</a><br>
+                                        <a href="javascript:void(0)">智慧校园解决方案--平安校园篇</a><br>
+                                        <a href="javascript:void(0)">智慧校园解决方案--智慧后勤篇</a><br>
+                                        <a href="javascript:void(0)">智慧校园解决方案--保卫服务篇</a><br>
+                                        <a href="javascript:void(0)">数字营区解决方案</a><br>
+                                    </div>
+                                    <div style="clear:both; height:0px;
+                                        overflow:hidden;"></div>
+                                </div>
+                                <div class="mj_menu_pro_li" style="padding:20px
+                                    30px 0px 10px;">
+                                    <div class="mj_menu_li_txt">
+                                        <a
+                                            href="http://www.dlax.com.cn/jiejuefangan_payy.html">平安医院解决方案</a><br>
+                                        <a
+                                            href="http://www.dlax.com.cn/jiejuefangan_pujiao.html">平安普教解决方案</a><br>
+                                        <a
+                                            href="http://www.dlax.com.cn/jiejuefangan_jingqu.html">智慧景区解决方案</a><br>
+                                        <a
+                                            href="http://www.dlax.com.cn/jiejuefangan_tingchechang.html">停车场联网解决方案</a><br>
+                                        <a
+                                            href="http://www.dlax.com.cn/jiejuefangan_jianyu.html">数字化监狱解决方案</a><br>
+                                        <a
+                                            href="http://www.dlax.com.cn/jiejuefangan_dianchang.html">平安电厂解决方案</a><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></li>
+                <li class="drop-menu-effect"> <a href="./about.html"><span>关于我们</span></a>
+                </li>
+            </div>
+        </div><!--菜单栏-->
+        <div class="fangan" style="overflow:hidden; margin:0 auto;">
+            <ul>
+                <li>
+                    <img src="./home/banner1.png" width="1920" height="327">
+                </li>
+            </ul>
+        </div>
+
+        <div id="solution">
+            <div class="jiejue_top"><p>解决方案</p>
+            </div>
+            <div class="jj_content1">
+                <div class="jj_con1">
+                    <p>技术解决方案</p>
+                    <ul>
+                        <li><a href="http://www.dlax.com.cn/jiejuefangan.html"
+                                class="con_title">&gt; 智慧园区安防解决方案</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_rlsb.html">&gt;
+                                园区人脸布控解决方案</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_yqxg.html">&gt;
+                                园区巡更解决方案</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_clgl.html">&gt;
+                                园区车辆管理解决方案</a></li>
+                        <p>行业解决方案</p>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_wangge.html">&gt;
+                                智慧校园解决方案--网格管理篇</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_paxy.html">&gt;
+                                智慧校园解决方案--平安校园篇</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_zhhq.html">&gt;
+                                智慧校园解决方案--智慧后勤篇</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_baoweifw.html">&gt;
+                                智慧校园解决方案--保卫服务篇</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_shuzi.html">&gt;
+                                数字营区解决方案</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_payy.html">&gt;
+                                平安医院解决方案</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_pujiao.html">&gt;
+                                平安普教解决方案</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_jingqu.html">&gt;
+                                智慧景区解决方案</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_tingchechang.html">&gt;
+                                停车场联网解决方案</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_jianyu.html">&gt;
+                                数字化监狱解决方案</a></li>
+                        <li><a
+                                href="http://www.dlax.com.cn/jiejuefangan_dianchang.html">&gt;
+                                平安电厂解决方案</a></li>
+                    </ul>
+                </div>
+                <div class="jj_main1">
+                    <ul class="jj-ul">
+                        <li class="jj-li" style="display:block;">
+                            <div class="pt-cp">
+                                <div class="jj_r">
+                                    <div class="chanp_r">
+                                        <div class="chanp_1">
+                                            <p class="title">智慧园区安防解决方案</p>
+                                            <p class="article"><b>应用背景：</b>
+                                            </p><div class="neir">
+                                                <p>通过智慧园区运营管理平台，突破传统园区的建设模式，提高园区管理效率、提升园区产业服务水平，以提高服务的明确性、效率、灵活
+                                                    性和响应速度，做到随需服务。从而做到园区服务和管理突破，吸引各企业入驻，最终达到园区产业结构升级。</p>
+                                            </div>
+                                            <p></p>
+                                            <div class="xq-img"><img
+                                                    src="./home/jjfa-zhyq.png"
+                                                    width="510" height="359"></div>
+                                        </div>
+                                        <hr>
+                                        <div class="chanp_2">
+                                            <p class="article"><b>方案价值：</b><br>
+                                            </p><div class="neir">
+                                                <p>1、建立园区安全防护及应急指挥系统，实现平安园区：</p>
+                                                <p>动态采集园区公共安全相关的子系统（包括周界报警、消防、出入口等）及园区内企业安全需上报的相关数据，实现动态安全预警。
+                                                    同</p><p>时实现园区公共安全相关的子系统之间的协同联动，建立园区安全应急指挥系统。</p>
+                                                <p>2、GIS功能及网格化管理，建设数字园区：</p>
+                                                <p>建立基于GIS的公共安全设施管理信息系统，提升对园区公共安全设施的维护水平及快速维修响应。改善园区对入园企业的服务。
+                                                    同时</p><p>也有利于园区对园区的土地使用、基础设施建设的实时监督及有效管理。</p>
+                                                <p>3、促进园区经济与环境协调发展，建设绿色园区：</p>
+                                                <p>通过前端传感器采集园区内的气、水、土等环境数据，同时可对园区企业“三污”排放情况进行监测，实现可循环、低排放、可持续
+                                                    的</p><p>生产方式，促进园区经济和环境协调发展。</p>
+                                            </div>
+
+                                            <div style="text-align:center"><img
+                                                    src="./home/jjfa-zhyq1.png"
+                                                    width="598" height="350"></div>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            <div class="current-copy">
+                <div class="left-copy"><img src="./home/logo.png" width="115"
+                        height="42"></div>
+                <div class="zj-copy"
+                    style="float:left;margin-left:40px;margin-top:40px;"><img
+                        src="./home/copy-fgx.png" width="1" height="88"></div>
+                <p>北京云逍遥网络科技有限公司<br>我们的理念：专业专注 用心服务 不求第一 但求满意</p>
+
+                <p style="margin:0;">地址：北京市海淀区信息路30号上地大厦5层501室
+                    &nbsp;&nbsp;电话：010-82874850&nbsp;&nbsp;版权所有：2015-2025</p>
+            </div>
+        </div>
+        <script src="./home/jquery.min.js"></script>
+        <script>
+$(function(){
+	lanrenzhijia(".drop-menu-effect");
+});
+function lanrenzhijia(_this){
+	$(_this).each(function(){
+		var $this = $(this);
+		var theMenu = $this.find(".submenu");
+		var tarHeight = theMenu.height();
+		theMenu.css({height:0});
+		$this.hover(
+			function(){
+				$(this).addClass("mj_hover_menu");
+				theMenu.stop().show().animate({height:tarHeight},400);
+			},
+			function(){
+				$(this).removeClass("mj_hover_menu");
+				theMenu.stop().animate({height:0},400,function(){
+					$(this).css({display:"none"});
+				});
+			}
+		);
+	});
+}
+</script>
+        <!-- 菜单栏 -->
+        <script src="./home/jquery-1.5.1.min.js"></script>
+        <script src="./home/lanrenzhijia.js"></script>
+        <script>
+	$(function(){
+		var $window = $(window),
+			window_width = $window.width();
+		$('#js_banner, #js_banner_img li').width(window_width);
+
+		var urlParam = G.util.parse.url(),
+			startFrame = 0;
+		if (urlParam.search && ('banner' in urlParam.search)) {
+			startFrame = (parseInt(urlParam.search['banner'])-1) || 0;
+		}
+
+		new $.Tab({/*添加圆点按钮*/
+			target: $('#js_banner_img li'),
+			effect: 'slide3d',
+			animateTime: 1000,
+			stay: 5000,
+			playTo: startFrame,
+			autoPlay: true,
+			merge: true,
+			prevBtn: $('#js_banner_pre'),
+			nextBtn: $('#js_banner_next')
+		});
+		$('#js_banner_img').css('left','-' + (window_width * startFrame) + 'px');
+	})
+</script>
+        <!-- banner -->
+        <script src="./home/jiejuefangan.html"></script>
+        <script type="text/javascript">
+$(function(){
+    $('.jj_con li').click(function(){
+	 $(this).addClass('con_title').siblings().removeClass('con_title'); 
+	  });
+	  
+   $(".jj_con ul li").click(function(){
+		var index = $(this).index();
+		number = index;
+		$('.jj_main .jj-ul .jj-li').hide();
+		$('.jj_main .jj-ul .jj-li:eq('+index+')').show();
+	});	 
+	
+}) 
+</script>
+    </body></html>
