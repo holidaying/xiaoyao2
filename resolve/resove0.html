@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>北京云逍遥网络科技有限公司</title>
+<link href="../home/style.css" type="text/css" rel="stylesheet">
+<script src="../home/jquery.js"></script>
+<script src="../home/lanrenzhijia1.js"></script>
+<script src="../home/jquery-1.7.2.min.js"></script>
+<script src="../home/style.js"></script>
+<script type="text/javascript" src="../home/jquery.mousewheel.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".side ul li").hover(function(){
+		$(this).find(".sidebox").stop().animate({"width":"124px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#0694d5"})	
+	},function(){
+		$(this).find(".sidebox").stop().animate({"width":"54px"},200).css({"opacity":"0.8","filter":"Alpha(opacity=80)","background":"#222"})	
+	});
+	
+});
+
+//回到顶部
+function goTop(){
+	$('html,body').animate({'scrollTop':0},600);
+}
+
+ $(function() {
+		//步骤 1. 从角标开始 ，点击角标，发生变化
+		//         2. 角标动的同时，图片也相应的切换
+		//         3. 循环定时器
+		
+		var znum=10; //变量保存zindex的信息，每点击一次zindex层次加1
+		var bannerTimer=null; //存储定时器
+		var iNow=0;    //累加器    初始为0；
+		var len=$('.box ul li').length;  //获取ul中li的个数 
+
+		$('.box ol li').click(function(event) {
+			znum++;
+
+			$(this).addClass('current').siblings('li').removeClass('current');
+
+			var index=$(this).index();
+			$('.box ul li').eq(index).css({
+				zIndex: znum
+			}).hide().fadeIn();
+
+			//点击完成之后，累加器从当前开始增加
+			iNow=index;
+		});
+
+		//自动播放
+		function autoPlay(){
+			iNow++;
+			znum++;
+			if(iNow>len-1){
+				iNow=0;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		}
+		bannerTimer=setInterval(autoPlay,3000);
+
+		//清除定时器
+		$('.box').hover(function() {
+			clearInterval(bannerTimer);
+			$('.box span').stop().fadeIn();
+		}, function() {
+			clearInterval(bannerTimer);
+			bannerTimer=setInterval(autoPlay,3000);
+			$('.box span').stop().fadeOut();
+		});
+
+		//点击前后
+		$('.prev').click(function(event) {
+			iNow--;
+			znum++;
+			if(iNow<0){
+				iNow=len-1;
+			}
+			$('.box ol li').eq(iNow).addClass('current').siblings('li').removeClass('current');
+			$('.box ul li').eq(iNow).css({
+				zIndex: znum
+			}).hide().fadeIn();
+		});
+		$('.next').click(function(event) {
+			autoPlay()
+		});
+	});
+</script>
+<style>
+.jj_con{height:2100px}
+.jj_content{height:2500px}
+.chanp_r{width:100%; height:2250px;  float:right; }
+.chanp_1 .title{font-size:24px;font-weight:bold;color:#666;text-align:center;margin:35px auto 0;padding-bottom: 25px;}
+.article{float:left;width:100%;height:auto;margin-top:16px;font-size:14px; margin-left:30px; line-height:34px;}
+.article b{font-weight:bold;font-size:16px;}
+.neir{ margin-left:29px; font-size:14px;}
+.neir p{ line-height:30px; margin:0px auto; font-size: 14px; text-indent:26px}
+.neir ul li{ line-height:30px; margin:0px auto; font-size: 14px; text-indent:26px; list-style:inside;}
+.neir2{ margin-left:29px; font-size:14px;}
+.neir2 ul li{ line-height:30px; margin:0px auto; font-size: 14px; text-indent:0px; list-style:inside;}
+.neir1{ margin-left:60px; font-size:14px;}
+.neir1 ul li{ line-height:30px; margin:0px auto; font-size: 14px; list-style:none;}
+.cp-img{float:left; width: 100%; height: auto; margin-top:5px; text-align:center; font-size:12px; margin:20px auto; position:relative;}
+.cp-img span{ position:absolute; bottom:-20px; left:44%; }
+.cp-img1{float:left; width: 100%; height: auto; margin-top:5px; text-align:center; font-size:12px; margin:20px auto; position:relative;}
+.cp-img1 span{ position:absolute; bottom:-20px; left:44%;}
+.chanp_3{height:auto;font-size:14px;width:100%;}
+.chanp_3 b{font-weight:bold;font-size:16px;}
+.chanp_3 img{margin-top:30px;margin-bottom:10px; margin-left:30px;}
+.chanp_4{height:auto;font-size:14px;width:100%;}
+</style>
+</head>
+<body style="">
+<!-- 导航 -->
+<div class="navbox">
+  <div class="nav">
+  <h1><a href="../home.html"><img src="../home/logo.png" width="115" height="42"></a></h1>
+        <li class="drop-menu-effect"><a href="../home.html"><span>首页</span></a></li>
+        <li class="drop-menu-effect"> <a href="../index.html"><span>产品</span></a> </li>
+        <li class="drop-menu-effect mj_hover_menu"> <a href="../resolve.html"><span>解决方案</span></a></li>
+         <li class="drop-menu-effect"> <a href="../about.html"><span>关于我们</span></a>
+         </li>
+      
+    </div>
+</div><!--菜单栏-->
+<div class="fangan" style="overflow:hidden; margin:0 auto;">
+	<ul>
+    	<li>
+			<img src="../home/banner1.png" width="1920" height="327">
+    	</li>
+    </ul>
+</div>
+
+<div id="solution">
+	<div class="jiejue_top"><p>解决方案</p>
+    </div>
+    <div class="jj_content">
+    <div class="jj_con">
+    <p>技术解决方案</p>
+      <ul>
+       
+        <li><a href="../resolve.html">&gt; 智慧园区安防解决方案</a></li>
+        <li><a href="../resolve0.html" class="con_title">&gt; 智慧监狱安防指挥平台方案</a></li>
+        <li><a href="./resolve3.html">&gt; 智慧水厂安防管理系统方案</a></li>
+        <li><a href="./resove1.html">&gt; 园区人脸布控解决方案</a></li>
+        <li><a href="./resove2.html">&gt; 园区巡更解决方案</a></li>
+      </ul>
+    </div>
+    <div class="jj_main">
+      <ul class="jj-ul">
+          <li class="jj-li" style="display:block;">
+            <div class="pt-cp">
+              <div class="jj_r">
+              	<div class="chanp_r">
+    	<div class="chanp_1">
+        	<p class="title">智慧监狱安防指挥平台方案</p>
+            <p class="article"><b>应用背景：</b>
+            	</p><div class="neir">
+                    <p>由于监狱网络的陈旧和监狱安防系统建设的落后，主要体现在视频监控、公共广播、报警、对讲、门禁等子系统独立运行、独立管理，普遍存在安防监控系统与信息化建设割裂分离的状况，随着监狱安防应用的进一步深入，这种独立运行、独立管理的形式暴露出越来越多的问题；有可能导致监狱安防工作出现漏洞，造成不良影响；为了便于监狱的日常管理工作，系统整合与联网统一管理就愈显迫切了
+                   </p>
+                    <p>为解决上述问题，北京云逍遥网络科技有限公司针对监狱网络安防应用的特点，须建设一套监狱物理安防信息管理平台，以监控图像资源和报警信息为核心，实现视频监控子系统、对讲监听子系统、智能会见子系统、综合报警子系统、门禁控制子系统、公共广播子系统、信息发布子系统、电网子系统、人脸识别系统、RFID无线定位系统等各类安防信息以及狱政管理、教育改造、劳动改造、狱内侦查、生活卫生、综合治理等业务信息的全面集成、整合、联动，实现各子系统间的资源共享和信息互通，打破各子系统界限，完成信息规范、实现数据融合，调度应急处置预案和监狱系统所有资源，实现联动指挥，有效处置重大突发紧急事件，协调指挥突发紧急事件的预防预警、应急演练、应急处置、调查评估、信息发布、应急保障和应急救援等工作。最终提高监狱执法、安全防范、罪犯改造等工作的信息技术应用能力。
+                    </p>
+                </div>
+            <p></p>
+        </div>
+        <hr>
+        <div class="chanp_3">
+        	<p class="article"><b>平台总体设计说明</b><br>
+             	</p><div class="neir">
+                    <p>平台是一个从各种安防、安全和其它系统中采集信息的平台，能够整合来自各种子系统的信息，使用户能够查看和分析相关联的信息，从而快速高效地识别各种情况，启动和管理相应的响应程序。<br></p>
+                   
+                    <p>平台与应用程序的结合，将与平台连结的各种安防子系统设备如视频监控、门禁管理、警报探测与传感器、网络及建筑监控等设备与信息系统如事件状态分析、数据收集器系统等结合，透过实体链接后针对相关事件作出快速的处理及结果分析，再帮助使用者及相关人员进行事件判定与识别。</p>
+                    
+                    <p>具体而言，该平台是一种先进的、多站点的事故管理系统，包括多个物理安全信息管理系统(指挥、控制、通信、计算机与情报中心)站点。整合了监狱系统中所有安全与安防功能——应急管理、预警管理、视频管理与监控、报告与信息分配，一切行动均由一个统一的平台管理，并且具备包含3D虚拟现实技术，以提供更优的势态感知与决策支持。</p>
+                   	<p>北京云逍遥网络科技有限公司开发的人脸识别系统具有很强的部署灵活性和功能扩展性：</p>
+                    <ul>
+                    	<li>依据监狱的实际情况，采用最新信息技术，从界面的统一集成、业务的统一集成、设备或信令统一集成、数据的分析和挖掘四个方面构建一个多系统集成联网的数字化、网络化、集成化、智慧化系统平台。</li>
+                        <li>实现监狱安防系统包括视频监控子系统、对讲监听子系统、智能会见子系统、综合报警子系统、门禁控制子系统、公共广播子系统、信息发布子系统、电网子系统、人脸识别系统、RFID无线定位系统、LED信息发布系统等系统及其他所有子系统在统一界面上集成化统一管理。对于集成平台来说，方便、实用的界面设计是至关重要的，平台借鉴了组态开发技术，实现了界面显示组态功能，平台可以显示多种不同功能模块画面，非常方便组合成不同角色使用的软件界面及组合成一机双屏和一机多屏显示方式。</li>
+                        <li>实现跨子系统的联动，提高整个系统工程的功能水平，实现集成子系统之间的信息交换和共享，并对集成信息进行综合应用。系统实现集成以后，原本各自独立的子系统从集成平台的角度上看，就如同一个系统一样，无论信息点和受控点是否在一个子系统内都可以建立联动关系，这种跨系统的控制流程大大提高了系统的自动化水平。</li>
+                        <li>对各子系统进行统一的监测、控制和管理，由于不同系统有不同的设备，如DVR、DVS、IPC、门禁主机、报警主机、巡更设备等，如果需要获取报警信息、事件内容、状态变化等信息，就需要对不同类型的前端设备发出操作指令和控制信息，兼容各个子系统不同类型的通信方式和多种通信格式。各个前端采集设备按照统一的中间件标准接口通过消息服务与中心平台进行信息交换和控制信令交换。实现将分散的、相互独立的子系统用相同的环境、相同的软件界面进行集中管理。监控各子系统的运行状况信息等，这种监控功能是方便的，能够以生动的图形方式和方便的人机界面展示所希望得到的各种信息。</li>
+                        <li>提供开放的数据结构，共享信息资源，系统建立一个以集成为基础的开放式工作平台，采集、转换各子系统的数据，建立对应系统的服务程序，接收网络上所有授权用户的服务请求，实现了数据共享，进一步实现数据的分析和挖掘，并可以输出不同的报表</li>
+                    </ul>
+               </div>          
+            <p></p>
+        </div>
+        <div class="chanp_2">
+        	<p class="article"><b>系统平台总体实施架构</b><br>
+            </p><div class="neir">
+                       <p>智慧监狱安防指挥平台方案的系统部署组网如下图所示：</p>
+            <p></p>
+            <div class="cp-img"><img src="../home/zhjy.png" width="393" height="305"></div>
+             
+                <b>组网说明：</b>
+                <div class="neir2">
+                <ul>
+                    <li>平台可提供统一的操作及管理界面对监狱基础类技防、应急联动指挥、应用类技防系统等功能实现全面整合与统一管理，并实现与物防系统的联动管理，简化技防管理流程，提升监管效率。</li>
+                    <li>平台可通过判断采集的信息，及时掌握现场情况，下达相关技防联动指令，从而有效的为第一时间掌握各类时间发生的情况提供技防支撑手段，有效控制应急事件现场。对于满足应急联动警情等级的报警事件可触发应急联动指挥系统实现全网联动，同时平台预留与两级数据中心与其他业务应用系统的接口，按需求可融合监管安全、罪犯管理及日常办公等其他应用系统，实现对监狱的综合管理要求。</li>
+                    <li>基于“云计算”和物联网技术的平台架构，充分运用物联网、云计算等智慧信息技术，以智能感知、互联互通、协同共享为原则，获取更为全面的各项关键信息，进行有效集成、智能处理，建立适合监狱特色业务的监测分析和决策支持体系。</li>
+                </ul>
+                </div>
+        </div>
+        <div class="chanp_4">
+        	<p class="article"><b>设计原则</b><br></p>
+            <div class="neir1">
+            <ul>
+            	<li>1、平台具有广泛的兼容性，能够兼容国际、国内主流品牌的视频监控、门禁和入侵探测、巡更等系统设备，兼容主流摄像机控制协议，保护现有投资、满足综合安防系统的扩容需要。</li>
+                <li>2、平台基于松散耦合方式集成各子系统，不会因集成平台系统故障而影响到各子系统功能运行，不会造成故障连锁反应，贯彻了“集中管理、分散控制”的原则，确保了安防系统的可靠性。</li>
+                <li>3、平台能很好地兼容不同的异构子系统，不同的厂商、不同的技术、不同的产品都要能纳入到这个平台上来运行，方便系统扩展；系统应采用开放式的系统结构，构建统一的安全防范综合管理平台，提供通用的标准接口，能够方便的实现与其它系统的互联。 </li>
+                <li>4、系统支持3D图形化的监控、管理界面，具有中文操作环境，界面简练、友好，联机帮助功能丰富。</li>
+                <li>5、平台具有国内领先、国际先进的技术水平。集成平台可以将不同的防范措施和手段与综合安防信息进行有效地联动和集成，有机地组成为一个统一的综合安全管理和控制系统。</li>
+                <li>6、用户所处的环境和需求千差万别，而且可能经常改变，尤其是对融合后的跨子系统功能来说更是如此，因此在提供基础功能的同时，提供强大的二次开发能力。</li>
+            </ul>
+            </div>
+        </div>
+    </div>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </div>
+    </div>
+</div>
+<div class="copy">
+                <div class="current-copy">
+                    <div class="left-copy"><img src="../home/logo.png"
+                            width="115" height="42"></div>
+                    <div class="zj-copy"
+                        style="float:left;margin-left:40px;margin-top:40px;"><img
+                            src="../home/copy-fgx.png" width="1" height="88"></div>
+                    <p>北京云逍遥网络科技有限公司<br>我们的理念：专业专注 用心服务 不求第一 但求满意</p>
+
+                    <p style="margin:0;">地址：北京市海淀区清华科技园创新大厦A座10层
+                        &nbsp;&nbsp;电话：010-62785888&nbsp;&nbsp;版权所有：北京云逍遥网络科技有限公司</p>
+                </div>
+        </div>
+
+<script src="../home/jquery.min.js"></script>
+<script>
+$(function(){
+	lanrenzhijia(".drop-menu-effect");
+});
+function lanrenzhijia(_this){
+	$(_this).each(function(){
+		var $this = $(this);
+		var theMenu = $this.find(".submenu");
+		var tarHeight = theMenu.height();
+		theMenu.css({height:0});
+		$this.hover(
+			function(){
+				$(this).addClass("mj_hover_menu");
+				theMenu.stop().show().animate({height:tarHeight},400);
+			},
+			function(){
+				$(this).removeClass("mj_hover_menu");
+				theMenu.stop().animate({height:0},400,function(){
+					$(this).css({display:"none"});
+				});
+			}
+		);
+	});
+}
+</script>
+<!-- 菜单栏 -->
+<script src="../home/jquery-1.5.1.min.js"></script>
+<script src="../home/lanrenzhijia.js"></script>
+<script>
+	$(function(){
+		var $window = $(window),
+			window_width = $window.width();
+		$('#js_banner, #js_banner_img li').width(window_width);
+
+		var urlParam = G.util.parse.url(),
+			startFrame = 0;
+		if (urlParam.search && ('banner' in urlParam.search)) {
+			startFrame = (parseInt(urlParam.search['banner'])-1) || 0;
+		}
+
+		new $.Tab({/*添加圆点按钮*/
+			target: $('#js_banner_img li'),
+			effect: 'slide3d',
+			animateTime: 1000,
+			stay: 5000,
+			playTo: startFrame,
+			autoPlay: true,
+			merge: true,
+			prevBtn: $('#js_banner_pre'),
+			nextBtn: $('#js_banner_next')
+		});
+		$('#js_banner_img').css('left','-' + (window_width * startFrame) + 'px');
+	})
+</script>
+<!-- banner -->
+<script type="text/javascript">
+$(function(){
+    $('.jj_con li').click(function(){
+	 $(this).addClass('con_title').siblings().removeClass('con_title'); 
+	  });
+	  
+   $(".jj_con ul li").click(function(){
+		var index = $(this).index();
+		number = index;
+		$('.jj_main .jj-ul .jj-li').hide();
+		$('.jj_main .jj-ul .jj-li:eq('+index+')').show();
+	});	 
+	
+}) 
+</script>
+
+
+</body></html>
